@@ -31,14 +31,12 @@ function App() {
           <li>
             <Button
             title="Focus"
-            // usingClass={timer.type === 'focus' && 'active-label' }
             callbackFunction={() => setCurrentTime('focus')}
             />
           </li>
           <li>
             <Button
             title="Rest"
-            // usingClass={timer.type === 'rest' && 'active-label' }
             callbackFunction={() => setCurrentTime('rest')}
             />
           </li>
@@ -56,9 +54,20 @@ function App() {
         </section>
       </section>
       <section className="buttons-container">
-        <Button title={<i class="far fa-play-circle"></i>} usingClass={!animation && 'active'} callbackFunction={startCountdown} />
-        <Button title={<i class="far fa-pause-circle"></i>} usingClass={animation && 'active'} callbackFunction={pauseCountdown} />
-        <Button title={<i class="far fa-stop-circle"></i>} callbackFunction={stopCountdown} />
+        <Button
+          title={<i class="far fa-play-circle"></i>}
+          usingClass={!animation && 'active'}
+          callbackFunction={startCountdown}
+        />
+        <Button
+          title={<i class="far fa-pause-circle"></i>}
+          usingClass={animation && 'active'}
+          callbackFunction={pauseCountdown}
+        />
+        <Button
+          title={<i class="far fa-stop-circle"></i>}
+          callbackFunction={stopCountdown}
+        />
       </section>
     </>
       <TimePicker />
