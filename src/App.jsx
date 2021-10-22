@@ -25,7 +25,7 @@ function App() {
   return (
     <main>
       <h1><span>P</span>omo</h1>
-      <p>Fique focado, seja feliz!</p>
+      <p>Stay focus, be happy!</p>
     <>
         <ul className="mode-buttons">
           <li>
