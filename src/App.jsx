@@ -31,14 +31,14 @@ function App() {
           <li>
             <Button
             title="Focus"
-            usingClass={timer.active === 'focus' ? 'active-label' : undefined}
+            // usingClass={timer.type === 'focus' && 'active-label' }
             callbackFunction={() => setCurrentTime('focus')}
             />
           </li>
           <li>
             <Button
             title="Rest"
-            usingClass={timer.active === 'rest' ? 'active-label' : undefined}
+            // usingClass={timer.type === 'rest' && 'active-label' }
             callbackFunction={() => setCurrentTime('rest')}
             />
           </li>

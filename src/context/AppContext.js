@@ -6,7 +6,7 @@ export const AppContext = createContext();
 
 const AppContextProvider = (props) => {
 
-  const [play] = useSound(alarmSong, { volume: .25 });
+  const [play, exposedData ] = useSound(alarmSong, { volume: .25 });
 
   const [time, setTime] = useState(25);
   const [timer, setTimer] = useState({
@@ -26,6 +26,7 @@ const AppContextProvider = (props) => {
 
   function startCountdown() {
     setStartAnimation(true)
+    exposedData.stop()
   }
 
   function pauseCountdown() {

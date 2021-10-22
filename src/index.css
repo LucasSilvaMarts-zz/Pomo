@@ -70,13 +70,8 @@ main p {
 }
 
 .mode-buttons button:hover {
-  border: 2px solid #00BECC;
-  color: #00BECC;
-}
-
-.active-label {
   background-color: #00BECC;
-  color: #ffff;
+  color: #fff;
 }
 
 .buttons-container {
