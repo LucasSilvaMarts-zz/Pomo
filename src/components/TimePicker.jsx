@@ -49,8 +49,8 @@ const TimePicker = () => {
             <div>Rest</div>
             <input className="config-input" name="rest" value={ rest } onChange={ handleChange } />
           </label>
-          <button type="submit">Set Timer</button>
         </div>
+          <button type="submit">Set Timer</button>
       </form>
     </section>
   );
