@@ -1,20 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
+import { AppContext } from '../context/AppContext';
 
-const Timer = () => {
+const Timer = ({ key, timer, animate, children }) => {
+
+  const { stopAnimation } = useContext(AppContext);
+
   return (
     <CountdownCircleTimer
-      duration={60}
+      key={key}
+      isPlaying={animate}
+      duration={timer % 60}
       colors={[
           ['#00BECC', 0.33],
           ['#00BECC', 0.33],
           ['#00BECC', 0.33],
         ]}
-        strokeWidth={6}
-        size={225}
-        trailColor="#444444"
+      strokeWidth={6}
+      size={225}
+      trailColor="#444444"
+      onComplete={
+        () => { stopAnimation() }
+      }
     >
-
+      { children }
     </CountdownCircleTimer>
   );
 };

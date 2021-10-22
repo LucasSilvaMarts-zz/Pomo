@@ -29,13 +29,7 @@ const AppContextProvider = (props) => {
   }
 
   function stopCountdown() {
-    setStartAnimation(false)
-    setTimer({
-      focus: 25,
-      rest: 5,
-      type: 'Focus',
-    })
-    setTime(25)
+    window.location.reload();
   }
 
   const updateTimerConfig = (newConfig) => {

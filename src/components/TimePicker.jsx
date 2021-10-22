@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import { AppContext } from '../context/AppContext';
 
 const TimePicker = () => {
 
   const [newTimer, setNewTimer] = useState({
     focus: 25,
     rest: 5,
-    type: 'Focus',
+    type: 'focus',
   });
+
+  const { updateTimerConfig } = useContext(AppContext);
 
   const handleChange = ({target: { value, name }}) => {
     switch (name) {
@@ -30,7 +33,7 @@ const TimePicker = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
+    updateTimerConfig(newTimer)
   }
 
   const { focus, rest } = newTimer;
