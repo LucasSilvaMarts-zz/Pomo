@@ -18,8 +18,9 @@ function App() {
     children,
   } = useContext(AppContext);
 
-
-  useEffect(() => { updateTimerConfig(timer) }, [timer, animation, updateTimerConfig])
+  useEffect(() => {
+    updateTimerConfig(timer);
+  }, [timer, animation, updateTimerConfig])
 
   return (
     <main>

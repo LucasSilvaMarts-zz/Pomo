@@ -1,8 +1,12 @@
 import React, { createContext, useState } from 'react';
+import useSound from 'use-sound';
+import alarmSong from '../sounds/alarm.wav';
 
 export const AppContext = createContext();
 
 const AppContextProvider = (props) => {
+
+  const [play] = useSound(alarmSong, { volume: .25 });
 
   const [time, setTime] = useState(25);
   const [timer, setTimer] = useState({
@@ -59,6 +63,7 @@ const AppContextProvider = (props) => {
 
   function stopAnimation() {
     setStartAnimation(false)
+    play()
   }
 
   return (
