@@ -1,5 +1,5 @@
-import React from 'react'
-import { CountdownCircleTimer } from 'react-countdown-circle-timer'
+import React from 'react';
+import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 
 const Timer = () => {
   return (
@@ -16,7 +16,7 @@ const Timer = () => {
     >
 
     </CountdownCircleTimer>
-  )
-}
+  );
+};
 
-export default Timer
+export default Timer;
