@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { CountdownCircleTimer } from 'react-countdown-circle-timer';
 import { AppContext } from '../context/AppContext';
+import useSound from 'use-sound';
 
 const Timer = ({ key, timer, animate, children }) => {
 
