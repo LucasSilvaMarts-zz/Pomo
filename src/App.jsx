@@ -23,7 +23,7 @@ function App() {
 
   return (
     <main>
-      <h1>Pomo</h1>
+      <h1><span>P</span>omo</h1>
       <p>Fique focado, seja feliz!</p>
     <>
         <ul className="mode-buttons">

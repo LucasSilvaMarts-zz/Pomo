@@ -8,7 +8,7 @@ const AppContextProvider = (props) => {
   const [timer, setTimer] = useState({
     focus: 25,
     rest: 5,
-    type: 'Focus',
+    type: 'focus',
   });
   const [animation, setStartAnimation] = useState(false);
 

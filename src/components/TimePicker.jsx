@@ -41,12 +41,16 @@ const TimePicker = () => {
     <section className="form-section">
       <form noValidate onSubmit={ handleSubmit }>
         <div className="config-inputs-container">
-          <label>Focus</label>
-          <input className="config-input" name="focus" value={ focus } onChange={ handleChange } />
-          <label>Rest</label>
-          <input className="config-input" name="rest" value={ rest } onChange={ handleChange } />
+          <label>
+            <div>Focus</div>
+            <input className="config-input" name="focus" value={ focus } onChange={ handleChange } />
+          </label>
+          <label>
+            <div>Rest</div>
+            <input className="config-input" name="rest" value={ rest } onChange={ handleChange } />
+          </label>
+          <button type="submit">Set Timer</button>
         </div>
-        <button type="submit">Set Timer</button>
       </form>
     </section>
   );
