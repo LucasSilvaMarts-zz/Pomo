@@ -31,13 +31,13 @@ function App() {
           <li>
             <Button
             title="Focus"
-            callbackFunction={() => setCurrentTime('focus')}
+            callbackFunction={ () => setCurrentTime('focus') }
             />
           </li>
           <li>
             <Button
             title="Rest"
-            callbackFunction={() => setCurrentTime('rest')}
+            callbackFunction={ () => setCurrentTime('rest') }
             />
           </li>
         </ul>
@@ -45,9 +45,9 @@ function App() {
       <section className="timer-container">
         <section className="time-section">
           <Timer
-            key={time}
-            timer={time}
-            animate={animation}
+            key={ time }
+            timer={ time }
+            animate={ animation }
           >
             { children }
           </Timer>
@@ -55,18 +55,18 @@ function App() {
       </section>
       <section className="buttons-container">
         <Button
-          title={<i class="far fa-play-circle"></i>}
-          usingClass={!animation && 'active'}
-          callbackFunction={startCountdown}
+          title={ <i class="far fa-play-circle"></i> }
+          usingClass={ !animation && 'active' }
+          callbackFunction={ startCountdown }
         />
         <Button
-          title={<i class="far fa-pause-circle"></i>}
-          usingClass={animation && 'active'}
-          callbackFunction={pauseCountdown}
+          title={ <i class="far fa-pause-circle"></i> }
+          usingClass={ animation && 'active' }
+          callbackFunction={ pauseCountdown }
         />
         <Button
-          title={<i class="far fa-stop-circle"></i>}
-          callbackFunction={stopCountdown}
+          title={ <i class="far fa-stop-circle"></i> }
+          callbackFunction={ stopCountdown }
         />
       </section>
     </>
