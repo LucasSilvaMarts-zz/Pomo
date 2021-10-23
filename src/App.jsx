@@ -72,6 +72,15 @@ function App() {
       </section>
     </>
       <TimePicker />
+      <footer>
+        <a
+          href="https://github.com/LucasSilvaMarts"
+          target="_blank"
+          rel="noreferrer"
+        >
+        Develop by Lucas Silva
+        </a>
+      </footer>
     </main>
   );
 };
