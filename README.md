@@ -40,7 +40,7 @@ Live application: https://pomo-vilaapps.netlify.app/
 <br/>
 
 * Clone o repositório: git clone git@github.com:LucasSilvaMarts/Pomo.git
-* Entre no diretório: cd pomo
+* Entre no diretório: cd Pomo
 * Abra com o seu editor favorito, ex: code .
 * Instale as dependências: npm install
 * Rode o app: npm start
