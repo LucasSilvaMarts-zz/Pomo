@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Button from './components/Button';
 import TimePicker from './components/TimePicker';
 import Timer from './components/Timer';
@@ -20,7 +21,7 @@ function App() {
 
   useEffect(() => {
     updateTimerConfig(timer);
-  }, [timer, animation, updateTimerConfig])
+  }, [timer, animation, updateTimerConfig]);
 
   return (
     <main>
@@ -73,6 +74,24 @@ function App() {
       <TimePicker />
     </main>
   );
-}
+};
+
+App.propTypes = {
+  AppContext: PropTypes.shape({
+    time: PropTypes.number,
+    timer: PropTypes.shape({
+      focus: PropTypes.number,
+      rest: PropTypes.number,
+      type: PropTypes.string,
+    }).isRequired,
+    animation: PropTypes.bool,
+    setCurrentTime: PropTypes.func,
+    startCountdown: PropTypes.func,
+    pauseCountdown: PropTypes.func,
+    stopCountdown: PropTypes.func,
+    updateTimerConfig: PropTypes.func,
+    children: PropTypes.func,
+  }),
+};
 
 export default App;
