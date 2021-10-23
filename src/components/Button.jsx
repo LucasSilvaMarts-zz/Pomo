@@ -1,14 +1,21 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Button = ({ title, usingClass, callbackFunction }) => {
   return (
     <button
-      className={usingClass}
-      onClick={callbackFunction}
+      className={ usingClass }
+      onClick={ callbackFunction }
     >
-      {title}
+      { title }
     </button>
   );
+};
+
+Button.propTypes = {
+  title: PropTypes.string,
+  usingClass: PropTypes.string,
+  callbackFunction: PropTypes.func,
 };
 
 export default Button;

@@ -22,31 +22,31 @@ const AppContextProvider = (props) => {
       type: actualTimerState
     });
     setTimerType(timer)
-  }
+  };
 
   function startCountdown() {
     setStartAnimation(true)
     exposedData.stop()
-  }
+  };
 
   function pauseCountdown() {
     setStartAnimation(false)
-  }
+  };
 
   function stopCountdown() {
     window.location.reload();
-  }
+  };
 
   const updateTimerConfig = (newConfig) => {
     setTimer(newConfig)
     setTimerType(newConfig)
-  }
+  };
 
   const children = ({ remainingTime }) => {
     const seconds = remainingTime % 60
 
-    return seconds
-  }
+    return seconds;
+  };
 
   const setTimerType = (timerValues) => {
     switch (timerValues.type) {
@@ -59,13 +59,13 @@ const AppContextProvider = (props) => {
       default:
         setTime(25)
         break;
-    }
-  }
+    };
+  };
 
   function stopAnimation() {
     setStartAnimation(false)
     play()
-  }
+  };
 
   return (
     <AppContext.Provider value={{
@@ -83,8 +83,7 @@ const AppContextProvider = (props) => {
     >
       { props.children }
     </AppContext.Provider>
-  )
-
-}
+  );
+};
 
 export default AppContextProvider;

@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import Button from './components/Button';
 import TimePicker from './components/TimePicker';
 import Timer from './components/Timer';
@@ -20,7 +21,7 @@ function App() {
 
   useEffect(() => {
     updateTimerConfig(timer);
-  }, [timer, animation, updateTimerConfig])
+  }, [timer, animation, updateTimerConfig]);
 
   return (
     <main>
@@ -31,13 +32,13 @@ function App() {
           <li>
             <Button
             title="Focus"
-            callbackFunction={() => setCurrentTime('focus')}
+            callbackFunction={ () => setCurrentTime('focus') }
             />
           </li>
           <li>
             <Button
             title="Rest"
-            callbackFunction={() => setCurrentTime('rest')}
+            callbackFunction={ () => setCurrentTime('rest') }
             />
           </li>
         </ul>
@@ -45,9 +46,9 @@ function App() {
       <section className="timer-container">
         <section className="time-section">
           <Timer
-            key={time}
-            timer={time}
-            animate={animation}
+            key={ time }
+            timer={ time }
+            animate={ animation }
           >
             { children }
           </Timer>
@@ -55,24 +56,42 @@ function App() {
       </section>
       <section className="buttons-container">
         <Button
-          title={<i class="far fa-play-circle"></i>}
-          usingClass={!animation && 'active'}
-          callbackFunction={startCountdown}
+          title={ <i class="far fa-play-circle"></i> }
+          usingClass={ !animation && 'active' }
+          callbackFunction={ startCountdown }
         />
         <Button
-          title={<i class="far fa-pause-circle"></i>}
-          usingClass={animation && 'active'}
-          callbackFunction={pauseCountdown}
+          title={ <i class="far fa-pause-circle"></i> }
+          usingClass={ animation && 'active' }
+          callbackFunction={ pauseCountdown }
         />
         <Button
-          title={<i class="far fa-stop-circle"></i>}
-          callbackFunction={stopCountdown}
+          title={ <i class="far fa-stop-circle"></i> }
+          callbackFunction={ stopCountdown }
         />
       </section>
     </>
       <TimePicker />
     </main>
   );
-}
+};
+
+App.propTypes = {
+  AppContext: PropTypes.shape({
+    time: PropTypes.number,
+    timer: PropTypes.shape({
+      focus: PropTypes.number,
+      rest: PropTypes.number,
+      type: PropTypes.string,
+    }).isRequired,
+    animation: PropTypes.bool,
+    setCurrentTime: PropTypes.func,
+    startCountdown: PropTypes.func,
+    pauseCountdown: PropTypes.func,
+    stopCountdown: PropTypes.func,
+    updateTimerConfig: PropTypes.func,
+    children: PropTypes.func,
+  }),
+};
 
 export default App;

@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import PropTypes from 'prop-types';
 import { AppContext } from '../context/AppContext';
 
 const TimePicker = () => {
@@ -28,13 +29,13 @@ const TimePicker = () => {
     default:
         break;
     }
-  }
+  };
 
 
   const handleSubmit = (e) => {
     e.preventDefault()
     updateTimerConfig(newTimer)
-  }
+  };
 
   const { focus, rest } = newTimer;
   return (
@@ -45,7 +46,9 @@ const TimePicker = () => {
             <div>Focus</div>
             <input
               className="config-input"
-              name="focus" value={ focus }
+              name="focus"
+              type="number"
+              value={ focus }
               onChange={ handleChange }
             />
           </label>
@@ -53,7 +56,9 @@ const TimePicker = () => {
             <div>Rest</div>
             <input
               className="config-input"
-              name="rest" value={ rest }
+              name="rest"
+              type="number"
+              value={ rest }
               onChange={ handleChange }
             />
           </label>
@@ -62,6 +67,12 @@ const TimePicker = () => {
       </form>
     </section>
   );
+};
+
+TimePicker.propTypes = {
+  AppContext: PropTypes.shape({
+    updateTimerConfig: PropTypes.func,
+  }),
 };
 
 export default TimePicker;
