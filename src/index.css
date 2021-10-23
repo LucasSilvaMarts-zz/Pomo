@@ -94,6 +94,7 @@ button.active {
 
 .form-section {
   padding-top: 35px;
+  margin-bottom: 50px;
 }
 
 .config-inputs-container label {
@@ -139,4 +140,14 @@ form button:hover {
   -o-transition: 0.2s linear;
   transition: 0.2s linear;
   -webkit-transition: 0.2s linear;
+}
+
+footer {
+  font-size: 0.9rem;
+  padding-bottom: 10px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
 }
